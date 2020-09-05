@@ -1,0 +1,63 @@
+{% load static %}
+<html>
+
+<head>
+    <title>card</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static '/js/first.js'%}">
+    <link rel="stylesheet" href="{% static '/css/second.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container my-color">
+        <div class="d-flex justify-content-between">
+            <h4>जय भवानी</h4>
+            <h4>युवसेना इंदौर</h4>
+           <h4>जय शिवाजी</h4>
+        </div>
+
+
+        <div class="container1 my-5">
+        {% for post in allPosts %}
+            <div class="d-flex bd-highlight mb-3">
+                <div class="ml-auto p-2 bd-highlight">
+                    <h1 class="nameclass"><b>{{post.name}}</b></h1>
+                    <h4><b>Birth:- {{post.phone}}</b></h4>
+                    <h2 class="nameclass1"><b>{{post.email}}</b></h2>
+                    <h3 class="nameclass1"><b>Program:-{{post.address}}</b></b>
+                    </h3>
+
+                </div>
+               
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+   
+
+    <div class="container ">
+        <div id="google_translate_element"></div>
+
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+            }
+        </script>
+
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+    </div>
+
+</body>
+
+</html>

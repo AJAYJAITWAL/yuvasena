@@ -1,0 +1,122 @@
+{% load static %}
+<html>
+
+<head>
+    <title>card</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static '/js/first.js'%}">
+    <link rel="stylesheet" href="{% static '/css/first.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+     <div class="container my-5">
+     
+        <div id="google_translate_element"></div>
+
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+            }
+        </script>
+
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+    </div>
+   
+
+    <div class="container my-color mt-3">
+   
+        <div class="d-flex justify-content-between">
+            <img src="{% static '/img/tiger1.jpeg' %}" class="rt float-left" alt="...">
+            <h1 class="text"><b>Yuvasena Indore</b></h1>
+            <img src="{% static '/img/teer1.jpeg' %}" class="rt float-right" alt="...">
+        </div>
+
+
+        <div class="container1">
+        
+            <div class="d-flex bd-highlight mb-3">
+                <div class="mr-auto p-2 bd-highlight">
+                
+                    <h1 class="nameclass"><b>{{allPosts.name}}</b></h1>
+                    <h3><b>{{allPosts.post}}</b></h3>
+                    <h3 class="nameclass1"><b>{{allPosts.Tenure}}</b></h3>
+                    <h3 class="nameclass1"><b>Birth :- {{allPosts.dob}}</b></b>
+                    </h3>
+                
+                </div>
+                <div class="d-flex align-items-start flex-column bd-highlight mb-3 " style="height: 200px;">
+                    <img src="{{allPosts.img.url}}" class="rt1 float-right" alt="...">
+                   <h2 class="nameclass2"><b>MP09100{{allPosts.sno}}</b></b>
+                    </h2>
+                </div>
+                
+            </div>
+           
+        </div>
+         
+    </div>
+
+    
+     <div class="container my-color1 my-1 " id="bcolor">
+      
+        <div class="d-flex justify-content-between">
+        
+        
+     
+            <h2>जय भवानी</h2>
+            <h2>जय हिंदूराष्ट्र</h2>
+           <h2>जय शिवाजी</h2>
+        </div>
+
+    
+        
+        <div class="container1 my-5" >
+            <div class="d-flex bd-highlight mb-3" >
+                <div class="ml-auto p-2 bd-highlight">
+                    <h2 class="nameclass_1"><b>{{allPosts.address}}</b></h2>
+                    <h2><b>Ward NO :- {{allPosts.wnumber}}</b></h2>
+                    <h2 class="nameclass2"><b>Assembly :- {{allPosts.assembly}}</b></h2>
+                    
+                    
+                 
+                </div>
+               
+
+            </div>
+            
+        </div>
+       
+    </div>
+    <!-- <div class="container mt-5 my-color">
+        <div class="d-flex flex-row bd-highlight mb-5">
+            <img src="../images/tiger-logo.jpeg" class="im1" alt="">
+            <div class="p-2 bd-highlight">Flex item 1</div>
+            <img src="../images/trishool.jpeg" class="im2" alt="...">
+
+        </div>
+        <ul class="list-inline">
+            <li class="list-inline-item">Lorem ipsum</li>
+            <li class="list-inline-item">Phasellus iaculis</li>
+            <li class="list-inline-item">Nulla volutpat</li>
+        </ul>
+    </div> -->
+
+    <div class="container my-5">
+
+<a href="bcard" style="padding-left:42%;"><button type="submit" class="btn btn-info" ><h2>Back Card</h2></button></a>
+</div>
+
+</body>
+
+</html>

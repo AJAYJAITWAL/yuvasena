@@ -8,7 +8,58 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static '/js/first.js'%}">
     <link rel="stylesheet" href="{% static '/css/first.css'%}">
+     <link rel="stylesheet" href="{% static '/css/style.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@600&display=swap" rel="stylesheet">
+     
+     
     <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
+    <style>
+    
+body {
+    margin: 0;
+    padding: 0;
+   
+    font-family: 'Hind', sans-serif;
+}
+
+#bcolor {
+    background: url('{% static "img/Back Card.jpg" %}');
+   
+    background-repeat: no-repeat;
+    
+    display: block;
+    margin-right: auto;
+   
+    border: 2px solid black;
+    width: 700px;
+    height: 420px;
+}
+
+.box {
+    width: 205vh;
+    height: 680px;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, .5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.my-color {
+    background: url('{% static "img/Front Card.jpg" %}');
+   
+    background-repeat: no-repeat;
+    
+    display: block;
+    margin-right: auto;
+   
+    border: 2px solid black;
+    width: 700px;
+    height: 420px;
+}
+.nameclassb {
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Palanquin Dark', sans-serif;
+    margin-top: 22px;
+}
+    </style>
 </head>
 
 <body>
@@ -36,29 +87,39 @@
 
     <div class="container my-color mt-3">
    
-        <div class="d-flex justify-content-between">
-            <img src="{% static '/img/tiger1.jpeg' %}" class="rt float-left" alt="...">
-            <h1 class="text"><b>Yuvasena Indore</b></h1>
+        <!-- <div class="d-flex justify-content-between">
+           <img src="{% static '/img/tiger1.jpeg' %}" class="rt float-left" alt="...">
+            <h1 class="text"><b>युवासेना इंदौर</b></h1>
             <img src="{% static '/img/teer1.jpeg' %}" class="rt float-right" alt="...">
         </div>
-
+-->
 
         <div class="container1">
         
             <div class="d-flex bd-highlight mb-3">
                 <div class="mr-auto p-2 bd-highlight">
-                
-                    <h1 class="nameclass"><b>{{allPosts.name}}</b></h1>
-                    <h3><b>{{allPosts.post}}</b></h3>
-                    <h3 class="nameclass1"><b>{{allPosts.Tenure}}</b></h3>
-                    <h3 class="nameclass1"><b>Birth :- {{allPosts.dob}}</b></b>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                    <h1 class="nameclass" ><b>{{allPosts.name}}</b></h1>
+                    <h3 class="nameclass1" ><b>{{allPosts.post}}</b></h3>
+                    <h3 class="nameclass1" ><b>{{allPosts.Tenure}}</b></h3>
+                    <h3 class="nameclass1" ><b>जन्म :- {{allPosts.dob}}</b></b>
                     </h3>
                 
                 </div>
+                
                 <div class="d-flex align-items-start flex-column bd-highlight mb-3 " style="height: 200px;">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
                     <img src="{{allPosts.img.url}}" class="rt1 float-right" alt="...">
-                   <h2 class="nameclass2"><b>MP09100{{allPosts.sno}}</b></b>
-                    </h2>
+                   <h5 class="nameclass2"><b>ID - MP091000{{allPosts.sno}}</b></b>
+                    </h5>
                 </div>
                 
             </div>
@@ -74,22 +135,21 @@
         
         
      
-            <h2>जय भवानी</h2>
-            <h2>जय हिंदूराष्ट्र</h2>
-           <h2>जय शिवाजी</h2>
-        </div>
+           <!-- <h2><b>जय भवानी</b></h2>
+            <h2><b>जय हिंदूराष्ट्र</b></h2>
+           <h2><b>जय शिवाजी</b></h2>
+ -->       </div>
 
     
         
         <div class="container1 my-5" >
             <div class="d-flex bd-highlight mb-3" >
-                <div class="ml-auto p-2 bd-highlight">
-                    <h2 class="nameclass_1"><b>{{allPosts.address}}</b></h2>
-                    <h2><b>Ward NO :- {{allPosts.wnumber}}</b></h2>
-                    <h2 class="nameclass2"><b>Assembly :- {{allPosts.assembly}}</b></h2>
+                <div class="mr-auto p-2 bd-highlight">
+                <br> <br><br><br>
+                    <h4 class="nameclassb" ><b>वार्ड नं :-    {{allPosts.wnumber}}</b></h4>
+                    <h4 class="nameclassb"><b>विधानसभा :-   {{allPosts.assembly}}</b></h4>
+                    <h4 class="nameclassb"><b>पता :-   {{allPosts.address}}</b></h4>
                     
-                    
-                 
                 </div>
                
 
@@ -112,11 +172,7 @@
         </ul>
     </div> -->
 
-    <div class="container my-5">
-
-<a href="bcard" style="padding-left:42%;"><button type="submit" class="btn btn-info" ><h2>Back Card</h2></button></a>
-</div>
-
+    
 </body>
 
 </html>

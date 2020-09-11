@@ -1,191 +1,213 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>{% block title %}{% endblock title %}</title>
-  <style>
-  #navbarSupportedContent{
-    padding-left:36%;
-  }
-  .logoimg img {  
-max-width: 1600%;  
-height: auto;  
-}  
-  </style>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg ">
-  <a class="navbar-brand nav-item font-weight-bold logoimg" style="width:10px; height:10px;" href="/"><img src="{% static "lion.jpeg" %}"></a>
+  <title>infinit-information</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+  
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/" style="color:orange;"><b>Yuvasena</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto navstyle">
-      <li class="nav-item font-weight-bold {% block homeactive %} {% endblock homeactive %}">
-        <a class="nav-link" style="color:black; font-size:120%" href="/">Home <span class="sr-only">(current)</span></a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item font-weight-bold {% block aboutactive %} {% endblock aboutactive %}">
-        <a class="nav-link" style="color:black; font-size:120%" href="/ajay">Social</a>
+      <li class="nav-item">
+        <a class="nav-link" href="#about">About Us</a>
       </li>
-      <li class="nav-item font-weight-bold {% block blogactive %} {% endblock blogactive %}">
-        <a class="nav-link" style="color:black; font-size:120%" href="/blog">Join Us</a>
+       <li class="nav-item">
+        <a class="nav-link" href="#registration">Registration</a>
       </li>
-      <li class="nav-item font-weight-bold {% block contactactive %} {% endblock contactactive %}">
-        <a class="nav-link" style="color:black; font-size:120%" href="/cont">Contact Us</a>
+       <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact Us</a>
       </li>
       
     </ul>
-    <div class="ml-auto form-inline">
-    <form method="get" action="/search" class=" my-2 my-lg-0 mx-4">
-      <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search" name="query" id="query">
-      <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
     </form>
-    
-     <!--admin panel <a  href="/admin" role="button" target="_blank" class="btn btn-info m-2 my-sm-0" >Admin Panel</a> -->
-    <!--{%  if user.is_authenticated %}
-    <ul class="navbar-nav mr-3">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Welcome {{request.user}}
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/logout">Logout</a>
-         
-      </li>
-
-    </ul>-->
-    
-
-    {% else %}
-    <!-- Button trigger login modal -->
-   
-    {% endif %}
   </div>
-</div>
 </nav>
 
-{% for message in messages%}
-<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-  <strong>Message: </strong> {{ message }}
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-{% endfor %}
-
-
-
-<!--Signup Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="signupModalTitle">Register</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="/signup" method="post">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Choose a unique username (Lowercase & alphnumeric)" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="fname">First Name</label>
-            <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
-          </div>
-
-          <div class="form-group">
-            <label for="lname">Last Name</label>
-            <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" required>
-          </div>
-
-          
-          <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
-          </div>
-
-          <div class="form-group">
-            <label for="pass1">Choose a Password</label>
-            <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Enter your password" required>
-          </div>
-
-          <div class="form-group">
-            <label for="pass2">Confirm Password</label>
-            <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Enter your password again" required>
-          </div>
-
-          {% csrf_token %}
-          <button type="submit" class="btn btn-info">Submit</button>
-
-          
-        </form>
-      </div>
-      <div class="modal-footer">
-      </div>
     </div>
-  </div>
+  </header><!-- End #header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Welcome to Yuvasena Indore</h1>
+      <h2>Please, fill out the infinit information of the great person of whole of the world!</h2>
+
+      <!-- search button-->
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<div class="container">
+    <br/>
+	<div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8">
+                            
+                        </div>
+                        <!--end of col-->
+                    </div>
 </div>
-
-<!-- Login Model -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="loginModalTitle">Login Here</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="/login" method="post">{% csrf_token %}
-          <div class="form-group">
-            <label for="loginusername">Username</label>
-            <input type="text" class="form-control" id="loginusername" name="loginusername" placeholder="name@example.com" required>
-          </div>
-         
-          <div class="form-group">
-            <label for="loginpassword">Password</label>
-            <input type="password" class="form-control" id="loginpassword" name="loginpassword" placeholder="Enter your password" required>
-          </div>
-
-          <button type="submit" class="btn btn-info">Login</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-      </div>
     </div>
-  </div>
-</div>
+  </section><!-- #hero -->
 
+  <main id="main">
 
-{% block body %}
-<div class="my-3 text-center" style="color:orange; font-size:500%"><img src="{% static "name.jpeg" %}"></div>
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+        
+        <div class="section-title">
+          <h2>About Us</h2>
+        </div>
 
-<div class="container my-5">
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <p class="font-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <p class="font-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <p class="font-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <ul>
+              <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+               </ul>
+          
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    <!-- ======= Registration Section ======= -->
+    <section id="registration" class="registration">
+      <div class="container">
+        
+        <div class="section-title">
+          <h2>Registration</h2>
+        </div>
+        <h6 class="font-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </h6>
+
+            <div class="container my-5">
 
 <a href="register" style="padding-left:42%;"><button type="submit" class="btn btn-info" ><h2>Registration</h2></button></a>
 </div>
 
-{% endblock body %}
-{% block js %}
-{% endblock js %}
+         </div>
+    </section>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+    <!-- ======= Contact Us Section ======= -->
+    <section id="contact" class="contact section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact Us</h2>
+        </div>
+
+        
+
+          <div class="col-lg-5 col-md-7 container">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Us Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+     
+      <div class="credits">
+          Designed by <a href="https://bootstrapmade.com/">Ajay Jaitwal</a>
+      </div>
+    </div>
+  </footer><!-- End #footer -->
+
+ 
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
 </html>

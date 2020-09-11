@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse
-from application.models import Bio
+from application.models import Bio,Register
 
 
 # Create your views here.
@@ -8,7 +8,7 @@ def application(request):
 
 
 def card(request):
-   allPosts = Bio.objects.all()[0]
+   allPosts = Register.objects.all()[0]
    context = {'allPosts' : allPosts}
    return render(request, 'card.html', context)
 
@@ -32,8 +32,8 @@ def register(request):
          anumber = request.POST['anumber']
          img = request.POST['img']
         
-         contact = Bio(name=name, address=address, wnumber=wnumber, assembly=assembly, phone=phone,  email=email, dob=dob, post=post,  Tenure=Tenure, position=position, bgroup=bgroup, education=education, pyear=pyear, occupation=occupation, anumber=anumber, img=img)
-        
+         contact = Register(name=name, address=address, wnumber=wnumber, assembly=assembly, phone=phone,  email=email, dob=dob, post=post,  Tenure=Tenure, position=position, bgroup=bgroup, education=education, pyear=pyear, occupation=occupation, anumber=anumber, img=img)
+         
          contact.save()
            
              
